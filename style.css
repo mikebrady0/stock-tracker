@@ -1,0 +1,162 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    flex: 1;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#timer {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+#ticker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    padding: 0 20px;
+}
+
+/* Stock Box Styles */
+.stock-box {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+}
+
+.stock-box h2 {
+    margin: 0;
+    font-size: 24px;
+    word-break: break-all; /* To handle long ticker names */
+}
+
+.stock-box p {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Color Classes */
+.red {
+    color: #f44336;
+}
+
+.dark-red {
+    color: #b71c1c;
+}
+
+.green {
+    color: #4CAF50;
+}
+
+.dark-green {
+    color: #1B5E20;
+}
+
+.gray {
+    color: #9E9E9E;
+}
+
+/* Animation Classes */
+.red-flash {
+    animation: flash-red 1s;
+}
+
+.green-flash {
+    animation: flash-green 1s;
+}
+
+.gray-flash {
+    animation: flash-gray 1s;
+}
+
+@keyframes flash-red {
+    from { background-color: #ffebee; }
+    to { background-color: white; }
+}
+
+@keyframes flash-green {
+    from { background-color: #e8f5e9; }
+    to { background-color: white; }
+}
+
+@keyframes flash-gray {
+    from { background-color: #f5f5f5; }
+    to { background-color: white; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input[type="text"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #ticker-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
